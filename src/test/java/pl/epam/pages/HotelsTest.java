@@ -32,7 +32,7 @@ public class HotelsTest {
 //                .checkHotelNames();
 
         String hotelName = homePage.typeCity("Dubai")
-                .selectDates("25/08/2022","30/08/2022")
+                .selectDates("25/10/2022","30/10/2022")
                 .setTravellers(3,3)
                 .clickSearchButton()
                 .checkHotelNames()

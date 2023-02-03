@@ -1,20 +1,19 @@
 package pl.epam.pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 public class HotelsTest {
 
     private static WebDriver driver;
     private static HomePage homePage;
 
-    @BeforeEach
+    @BeforeTest
     public void setup(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -24,15 +23,15 @@ public class HotelsTest {
     }
 
     @Test
-    public void checkHotelNames(){
+    public void checkHotelNamesTest(){
 //        homePage.typeCity("Dubai")
 //                .selectDates("25/08/2022","30/08/2022")
 //                .setTravellers(3,3)
 //                .clickSearchButton()
-//                .checkHotelNames();
+//                .checkHotelNamesTest();
 
         String hotelName = homePage.typeCity("Dubai")
-                .selectDates("25/10/2022","30/10/2022")
+                .selectDates("25/02/2023","26/02/2023")
                 .setTravellers(3,3)
                 .clickSearchButton()
                 .checkHotelNames()
@@ -45,11 +44,12 @@ public class HotelsTest {
 //                .selectDates("25/08/2022","30/08/2022")
 //                .setTravellers(3,3)
 //                .clickSearchButton()
-//                .checkHotelNames()
+//                .checkHotelNamesTest()
 //                .getHotelName()).isEqualTo("Jumeirah Beach Hotel");
 
     }
-
-
-
+    @AfterTest
+    public void tearDown() {
+        driver.close();
+    }
 }

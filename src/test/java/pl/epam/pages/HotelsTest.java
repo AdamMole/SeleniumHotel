@@ -1,6 +1,7 @@
 package pl.epam.pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import jdk.jfr.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -22,7 +23,8 @@ public class HotelsTest {
         driver.get("http://www.kurs-selenium.pl/demo/m-hotels");
     }
 
-    @Test
+    @Test(description = "This is desciption in Test annotation")
+    @Description("This is desciption in Description annotation")
     public void checkHotelNamesTest(){
 //        homePage.typeCity("Dubai")
 //                .selectDates("25/08/2022","30/08/2022")
